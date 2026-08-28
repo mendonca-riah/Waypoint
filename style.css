@@ -1,0 +1,87 @@
+body{
+    background-color: #A8BFA3;
+    background-image:
+
+        radial-gradient(circle at 5% 10%, transparent 0, transparent 75px, rgba(47, 79, 52, 0.28) 77px, rgba(47, 79, 52, 0.28) 81px, transparent 83px),
+
+        radial-gradient(circle at 25% 8%, transparent 0, transparent 115px, rgba(47, 79, 52, 0.22) 117px, rgba(47, 79, 52, 0.22) 121px, transparent 123px),
+
+        radial-gradient(circle at 52% 12%, transparent 0, transparent 85px, rgba(47, 79, 52, 0.25) 87px, rgba(47, 79, 52, 0.25) 91px, transparent 93px),
+
+        radial-gradient(circle at 82% 8%, transparent 0, transparent 130px, rgba(47, 79, 52, 0.22) 132px, rgba(47, 79, 52, 0.22) 136px, transparent 138px),
+
+        radial-gradient(circle at 12% 38%, transparent 0, transparent 125px, rgba(47, 79, 52, 0.20) 127px, rgba(47, 79, 52, 0.20) 131px, transparent 133px),
+
+        radial-gradient(circle at 42% 35%, transparent 0, transparent 150px, rgba(47, 79, 52, 0.18) 152px, rgba(47, 79, 52, 0.18) 156px, transparent 158px),
+
+        radial-gradient(circle at 72% 38%, transparent 0, transparent 105px, rgba(47, 79, 52, 0.24) 107px, rgba(47, 79, 52, 0.24) 111px, transparent 113px),
+
+        radial-gradient(circle at 96% 42%, transparent 0, transparent 145px, rgba(47, 79, 52, 0.20) 147px, rgba(47, 79, 52, 0.20) 151px, transparent 153px),
+
+        radial-gradient(circle at 5% 72%, transparent 0, transparent 100px, rgba(47, 79, 52, 0.25) 102px, rgba(47, 79, 52, 0.25) 106px, transparent 108px),
+
+        radial-gradient(circle at 30% 78%, transparent 0, transparent 135px, rgba(47, 79, 52, 0.19) 137px, rgba(47, 79, 52, 0.19) 141px, transparent 143px),
+
+        radial-gradient(circle at 62% 72%, transparent 0, transparent 95px, rgba(47, 79, 52, 0.25) 97px, rgba(47, 79, 52, 0.25) 101px, transparent 103px),
+
+        radial-gradient(circle at 88% 76%, transparent 0, transparent 125px, rgba(47, 79, 52, 0.22) 127px, rgba(47, 79, 52, 0.22) 131px, transparent 133px);
+
+    color: #374151;
+    font-family: poppins, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+    h1{
+        font-size: 30px;
+        color: #5F7F63;
+        text-align: left;
+        font-weight: 700;
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+    .main-header{
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 30px;
+        width: 100%;
+    }
+    .main-header nav{
+        background-color: #718774;
+        padding: 35px 25px;
+        display: flex;
+        justify-content: space-around;
+        flex: 1; 
+    }
+    .main-header nav a {
+        color: #374151;
+        font-size: 25px;
+    }
+    #WELCOME {
+        text-align: center;
+    }
+    .welcome-title{
+        font-size: 60px;
+        text-align: center;
+        margin-bottom: 0px;
+    }
+    .mission{
+        font-size: 30px;
+        color: #2F4F34;
+        margin-top: 0;
+    }
+    .description{
+        font-size: 25px;
+        color: #374151;
+        margin-bottom: 60px;
+    }
+    .welcome-heading{
+        margin-top: 60px;
+        font-size: 35px;
+        color: #5F7F63;
+    }
+    .quote{
+        font-size: 30px;
+        font-style: italic;
+        color: #2F4F34;
+    }
