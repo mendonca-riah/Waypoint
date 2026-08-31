@@ -90,14 +90,77 @@ body{
         color: #2F4F34;
     }
 
+
+
     
-    .goals-page{
-        text-align: center;
-        padding: 20px;
-    }
     .goals-section{
+        text-align: center;
         margin-top: 0;
         font-size: 60px;
         color: #2F4F34;
         margin-bottom: 30px;
+    }
+
+    .task-card {
+    background-color: #E5E7E3;
+    width: 92%;
+    padding: 40px;
+    max-width: 1200px;
+    margin: 30px auto;
+    border-radius: 18px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    text-align: left;
+    }
+    .task-card h3 {
+    font-size: 32px;
+    color: #173D2A;
+    margin-top: 0;
+    margin-bottom: 25px;
+   }
+   .task-card label {
+    font-size: 18px;
+    color: #374151;
+   }
+
+   .task-card input {
+    font-size: 17px;
+    padding: 12px 15px;
+   }
+
+   .task-card button {
+    font-size: 17px;
+    padding: 12px 22px;
+   }
+
+   .goals-card {
+    background-color: #E5E7E3;
+    width: 92%;
+    max-width: 1200px;
+    padding: 40px;
+    margin: 30px auto;
+    border-radius: 18px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    text-align: left;
+    }
+
+   .goals-card h3 {
+    font-size: 32px;
+    color: #173D2A;
+    margin-top: 0;
+    margin-bottom: 25px;
+    }
+
+    .goals-card label {
+     font-size: 18px;
+     color: #374151;
+    }
+
+    .goals-card input {
+     font-size: 17px;
+     padding: 12px 15px;
+     }
+
+    .goals-card button {
+    font-size: 17px;
+    padding: 12px 22px;
     }
