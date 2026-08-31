@@ -164,3 +164,36 @@ body{
     font-size: 17px;
     padding: 12px 22px;
     }
+
+    .milestones-card {
+    background-color: #E5E7E3;
+    width: 92%;
+    max-width: 1200px;
+    padding: 40px;
+    margin: 30px auto;
+    border-radius: 18px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    text-align: left;
+    }
+
+   .milestones-card h3 {
+    font-size: 32px;
+    color: #173D2A;
+    margin-top: 0;
+    margin-bottom: 25px;
+    }
+
+    .milestones-card label {
+    font-size: 18px;
+    color: #374151;
+    }
+
+    .milestones-card input {
+    font-size: 17px;
+    padding: 12px 15px;
+    }
+
+   .milestones-card button {
+    font-size: 17px;
+    padding: 12px 22px;
+    }
