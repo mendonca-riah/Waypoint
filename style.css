@@ -317,3 +317,64 @@ body{
     padding: 12px 22px;
     margin-top: 5px;
 }
+
+nav a.active {
+    color: #173D2A;
+    font-weight: bold;
+}
+
+
+
+
+
+
+.login-page {
+    background-color: #A8BFA3;
+    min-height: 100vh;
+    padding: 70px 20px;
+    text-align: center;
+}
+
+.login-page h2 {
+    font-size: 40px;
+    color: #173D2A;
+    margin-bottom: 35px;
+}
+
+.login-card {
+    background-color: #E5E7E3;
+    width: 90%;
+    max-width: 500px;
+    padding: 40px;
+    margin: 0 auto;
+    border-radius: 18px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    text-align: left;
+}
+.login-card label {
+    display: block;
+    font-size: 18px;
+    color: #374151;
+    margin-bottom: 8px;
+}
+
+.login-card input {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 17px;
+    padding: 12px 15px;
+    margin-bottom: 22px;
+    border: 1px solid #9CA3AF;
+    border-radius: 8px;
+    background-color: #F9FAF9;
+}
+.login-card button {
+    font-size: 17px;
+    padding: 12px 22px;
+    background-color: #173D2A;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
