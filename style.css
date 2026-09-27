@@ -25,12 +25,17 @@ body{
         radial-gradient(circle at 62% 72%, transparent 0, transparent 95px, rgba(47, 79, 52, 0.25) 97px, rgba(47, 79, 52, 0.25) 101px, transparent 103px),
 
         radial-gradient(circle at 88% 76%, transparent 0, transparent 125px, rgba(47, 79, 52, 0.22) 127px, rgba(47, 79, 52, 0.22) 131px, transparent 133px);
-
+      
+    
     color: #374151;
     font-family: poppins, sans-serif;
     margin: 0;
-    padding: 20px;
+    padding: 0;
 }
+    .login-page,
+    .signin-page{
+        background-image:none
+    }
 
 
     h1{
@@ -331,6 +336,7 @@ nav a.active {
 .login-page {
     background-color: #A8BFA3;
     min-height: 100vh;
+    box-sizing: border-box;
     padding: 70px 20px;
     text-align: center;
 }
@@ -384,6 +390,7 @@ nav a.active {
 .signin-page {
     background-color: #A8BFA3;
     min-height: 100vh;
+    box-sizing: border-box;
     padding: 60px 20px;
     text-align: center;
 }
