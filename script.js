@@ -12,7 +12,7 @@ createAccountButton.addEventListener("click", function () {
         return;
     }
 
-    localStorage.setItem("user-name", username);
+    localStorage.setItem("banana", username);
 
     alert("Your account has been created!");
 
@@ -20,7 +20,7 @@ createAccountButton.addEventListener("click", function () {
 });
 }
 
-const username = localStorage.getItem("user-name");
+const username = localStorage.getItem("banana");
 
 const usernameElement = document.getElementById("user-name");
 
