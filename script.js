@@ -1,3 +1,4 @@
+
 const createAccountButton = document.getElementById("create-account");
 
 if (createAccountButton) {
@@ -52,13 +53,13 @@ if (signInButton) {
             alert("Incorrect email or password.");
         }
     });
+}
 
 
-
+    
     const addTaskButton = document.getElementById("add-task");
-
-    if (addTaskButton) {
     console.log(addTaskButton);
+    if (addTaskButton) {
     
     addTaskButton.addEventListener("click", function () {
         alert("button clicked");
@@ -74,10 +75,12 @@ if (signInButton) {
         const task = document.createElement("p");
 
         task.textContent = taskText;
+        task.addEventListener("click", function () {
+        task.style.textDecoration = "line-through";
+        });
 
         document.getElementById("task-list").appendChild(task);
 
         taskInput.value = "";
     });
-}
 }
