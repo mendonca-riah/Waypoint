@@ -73,14 +73,30 @@ if (signInButton) {
         }
 
         const task = document.createElement("p");
-
         task.textContent = taskText;
+
         task.addEventListener("click", function () {
+        if (task.style.textDecoration === "line-through") {
+        task.style.textDecoration = "none";
+        } else {
         task.style.textDecoration = "line-through";
+        }
+         });
+        const deleteButton = document.createElement("button");
+        deleteButton.textContent = "Delete";
+
+        deleteButton.addEventListener("click", function () {
+            event.stopPropagation();
+            task.remove();
         });
 
+        task.appendChild(deleteButton);
+                    
         document.getElementById("task-list").appendChild(task);
-
         taskInput.value = "";
     });
 }
+
+
+
+

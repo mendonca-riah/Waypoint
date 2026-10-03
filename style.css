@@ -205,6 +205,19 @@ body{
 
 
 
+    #task-list button {
+    margin-left: 15px;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+   #task-list p {
+    margin: 12px 0;
+}
+
+
+
 
 
     .achievements-section{
