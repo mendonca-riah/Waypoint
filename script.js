@@ -56,7 +56,19 @@ if (signInButton) {
 }
 
 
-    
+    let tasks=JSON.parse(localStorage.getItem("tasks")) || [];
+
+    function displayTask(taskText) {
+    const task = document.createElement("p");
+
+    task.textContent = taskText;
+
+    document.getElementById("task-list").appendChild(task);
+    }
+    tasks.forEach(function(taskText) {
+    displayTask(taskText);
+    });
+
     const addTaskButton = document.getElementById("add-task");
     console.log(addTaskButton);
     if (addTaskButton) {
@@ -66,6 +78,11 @@ if (signInButton) {
 
         const taskInput = document.getElementById("task");
         const taskText = taskInput.value;
+
+        tasks.push(taskText);
+
+        localStorage.setItem("tasks", JSON.stringify(tasks));
+        alert(localStorage.getItem("tasks"));
 
         if (taskText === "") {
             alert("Please enter a task.");
