@@ -34,6 +34,8 @@ if (usernameElement) {
 
 
 
+
+
 const signInButton = document.getElementById("sign-in");
 
 if (signInButton) {
@@ -56,64 +58,82 @@ if (signInButton) {
 }
 
 
-    let tasks=JSON.parse(localStorage.getItem("tasks")) || [];
 
-    function displayTask(taskText) {
-    const task = document.createElement("p");
 
-    task.textContent = taskText;
+    let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
 
-    document.getElementById("task-list").appendChild(task);
-    }
-    tasks.forEach(function(taskText) {
-    displayTask(taskText);
-    });
-
-    const addTaskButton = document.getElementById("add-task");
-    console.log(addTaskButton);
-    if (addTaskButton) {
-    
-    addTaskButton.addEventListener("click", function () {
-        alert("button clicked");
-
-        const taskInput = document.getElementById("task");
-        const taskText = taskInput.value;
-
-        tasks.push(taskText);
-
-        localStorage.setItem("tasks", JSON.stringify(tasks));
-        alert(localStorage.getItem("tasks"));
-
-        if (taskText === "") {
-            alert("Please enter a task.");
-            return;
-        }
-
+    function displayTask(taskData) {
+        const taskText = taskData.text;
         const task = document.createElement("p");
+
         task.textContent = taskText;
 
-        task.addEventListener("click", function () {
-        if (task.style.textDecoration === "line-through") {
-        task.style.textDecoration = "none";
-        } else {
+        // Display the saved completion status
+        if (taskData.completed === true) {
         task.style.textDecoration = "line-through";
         }
-         });
+
+        // Complete or uncomplete a task
+        task.addEventListener("click", function() {
+            taskData.completed = !taskData.completed;
+
+            if (taskData.completed) {
+                task.style.textDecoration = "line-through";
+            } else {
+                task.style.textDecoration = "none";
+            }
+
+            localStorage.setItem("tasks", JSON.stringify(tasks));
+        });
+
+        // Create the Delete button
         const deleteButton = document.createElement("button");
         deleteButton.textContent = "Delete";
 
-        deleteButton.addEventListener("click", function () {
+        deleteButton.addEventListener("click", function(event) {
             event.stopPropagation();
+
+            const taskIndex = tasks.indexOf(taskData);
+            tasks.splice(taskIndex, 1);
+
+            localStorage.setItem("tasks", JSON.stringify(tasks));
+
             task.remove();
         });
 
         task.appendChild(deleteButton);
-                    
+
         document.getElementById("task-list").appendChild(task);
-        taskInput.value = "";
+    }
+
+    // Display previously saved tasks
+    tasks.forEach(function(taskData) {
+        displayTask(taskData);
     });
-}
 
+    // Add a new task
+    const addTaskButton = document.getElementById("add-task");
 
+    if (addTaskButton) {
+        addTaskButton.addEventListener("click", function() {
+            const taskInput = document.getElementById("task");
+            const taskText = taskInput.value.trim();
+
+            if (taskText === "") {
+                alert("Please enter a task.");
+                return;
+            }
+
+            const newTask = {
+                text: taskText,
+                completed: false
+            };
+
+            tasks.push(newTask);
+            localStorage.setItem("tasks", JSON.stringify(tasks));
+            displayTask(newTask);
+            taskInput.value = "";
+        });
+    }
 
 
