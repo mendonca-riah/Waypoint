@@ -137,3 +137,148 @@ if (signInButton) {
     }
 
 
+
+
+    // GOALS
+
+let goals = JSON.parse(localStorage.getItem("goals")) || [];
+
+function displayGoal(goalData) {
+    const goalText = goalData.text;
+    const goal = document.createElement("p");
+
+    goal.textContent = goalText;
+
+    // Display saved completion status
+    if (goalData.completed === true) {
+        goal.style.textDecoration = "line-through";
+    }
+
+    // Complete or uncomplete a goal
+    goal.addEventListener("click", function() {
+        goalData.completed = !goalData.completed;
+
+        if (goalData.completed) {
+            goal.style.textDecoration = "line-through";
+        } else {
+            goal.style.textDecoration = "none";
+        }
+
+        localStorage.setItem("goals", JSON.stringify(goals));
+    });
+
+    // Create the Delete button
+    const deleteButton = document.createElement("button");
+    deleteButton.textContent = "Delete";
+
+    deleteButton.addEventListener("click", function(event) {
+        event.stopPropagation();
+
+        const goalIndex = goals.indexOf(goalData);
+        goals.splice(goalIndex, 1);
+
+        localStorage.setItem("goals", JSON.stringify(goals));
+
+        goal.remove();
+    });
+
+    goal.appendChild(deleteButton);
+
+    document.getElementById("goal-list").appendChild(goal);
+}
+
+// Display previously saved goals
+goals.forEach(function(goalData) {
+    displayGoal(goalData);
+});
+
+// Add a new goal
+const addGoalButton = document.getElementById("add-goal");
+
+if (addGoalButton) {
+    addGoalButton.addEventListener("click", function() {
+        const goalInput = document.getElementById("Goal");
+        const goalText = goalInput.value.trim();
+
+        if (goalText === "") {
+            alert("Please enter a goal.");
+            return;
+        }
+
+        const newGoal = {
+            text: goalText,
+            completed: false
+        };
+
+        goals.push(newGoal);
+
+        localStorage.setItem("goals", JSON.stringify(goals));
+
+        displayGoal(newGoal);
+
+        goalInput.value = "";
+    });
+}
+
+
+
+
+
+// MILESTONES
+let milestones = JSON.parse(localStorage.getItem("milestones")) || [];
+function displayMilestone(milestoneData) {
+    const milestoneText = milestoneData.text;
+    const milestone = document.createElement("p");
+    milestone.textContent = milestoneText;
+    // Display saved completion status
+    if (milestoneData.completed === true) {
+        milestone.style.textDecoration = "line-through";
+    }
+    // Complete or uncomplete a milestone
+    milestone.addEventListener("click", function() {
+        milestoneData.completed = !milestoneData.completed;
+        if (milestoneData.completed) {
+            milestone.style.textDecoration = "line-through";
+        } else {
+            milestone.style.textDecoration = "none";
+        }
+        localStorage.setItem("milestones", JSON.stringify(milestones));
+    });
+    // Create the Delete button
+    const deleteButton = document.createElement("button");
+    deleteButton.textContent = "Delete";
+    deleteButton.addEventListener("click", function(event) {
+        event.stopPropagation();
+        const milestoneIndex = milestones.indexOf(milestoneData);
+        milestones.splice(milestoneIndex, 1);
+        localStorage.setItem("milestones", JSON.stringify(milestones));
+        milestone.remove();
+    });
+    milestone.appendChild(deleteButton);
+    document.getElementById("milestone-list").appendChild(milestone);
+}
+// Display previously saved milestones
+milestones.forEach(function(milestoneData) {
+    displayMilestone(milestoneData);
+});
+// Add a new milestone
+const addMilestoneButton = document.getElementById("add-milestone");
+if (addMilestoneButton) {
+    addMilestoneButton.addEventListener("click", function() {
+        const milestoneInput = document.getElementById("Milestones");
+        const milestoneText = milestoneInput.value.trim();
+        if (milestoneText === "") {
+            alert("Please enter a milestone.");
+            return;
+        }
+        const newMilestone = {
+            text: milestoneText,
+            completed: false
+        };
+        milestones.push(newMilestone);
+        localStorage.setItem("milestones", JSON.stringify(milestones));
+        displayMilestone(newMilestone);
+        milestoneInput.value = "";
+    });
+}
+
